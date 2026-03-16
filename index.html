@@ -2332,108 +2332,108 @@ function MarketMod() {
 
   // Real weekly closing prices from CSV (6 names; TCPC uses synthetic anchors)
   const realPx = [
-    {d:"3/11/24",ARCC:20.54,OBDC:15.18,BXSL:30.48,TSLX:21.31,GBDC:15.69,TCPC:10.42},
-    {d:"3/18/24",ARCC:20.05,OBDC:15.25,BXSL:30.52,TSLX:20.68,GBDC:15.78,TCPC:9.81},
-    {d:"3/25/24",ARCC:20.12,OBDC:15.41,BXSL:31.35,TSLX:20.88,GBDC:16.15,TCPC:9.86},
-    {d:"4/2/24",ARCC:20.53,OBDC:15.37,BXSL:30.60,TSLX:21.01,GBDC:16.56,TCPC:9.83},
-    {d:"4/9/24",ARCC:20.53,OBDC:15.57,BXSL:30.78,TSLX:20.96,GBDC:16.55,TCPC:9.89},
-    {d:"4/16/24",ARCC:20.24,OBDC:15.39,BXSL:30.73,TSLX:20.55,GBDC:16.52,TCPC:9.81},
-    {d:"4/23/24",ARCC:20.74,OBDC:15.74,BXSL:31.89,TSLX:21.18,GBDC:17.15,TCPC:9.76},
-    {d:"4/30/24",ARCC:20.61,OBDC:15.90,BXSL:31.69,TSLX:21.69,GBDC:17.31,TCPC:9.81},
-    {d:"5/7/24",ARCC:20.80,OBDC:16.32,BXSL:32.27,TSLX:21.03,GBDC:16.78,TCPC:10.17},
-    {d:"5/14/24",ARCC:21.25,OBDC:16.51,BXSL:31.15,TSLX:21.67,GBDC:16.62,TCPC:10.44},
-    {d:"5/21/24",ARCC:21.46,OBDC:16.60,BXSL:30.93,TSLX:21.55,GBDC:16.30,TCPC:10.56},
-    {d:"5/29/24",ARCC:21.25,OBDC:16.64,BXSL:30.71,TSLX:21.62,GBDC:16.25,TCPC:10.61},
-    {d:"6/5/24",ARCC:21.58,OBDC:16.34,BXSL:31.46,TSLX:21.91,GBDC:16.06,TCPC:11.10},
-    {d:"6/12/24",ARCC:21.43,OBDC:15.98,BXSL:31.40,TSLX:21.68,GBDC:15.85,TCPC:11.07},
-    {d:"6/20/24",ARCC:20.58,OBDC:15.92,BXSL:31.34,TSLX:21.24,GBDC:15.53,TCPC:10.46},
-    {d:"6/27/24",ARCC:20.80,OBDC:15.58,BXSL:31.83,TSLX:21.35,GBDC:15.73,TCPC:10.55},
-    {d:"7/5/24",ARCC:21.10,OBDC:15.60,BXSL:31.47,TSLX:21.72,GBDC:15.72,TCPC:10.68},
-    {d:"7/12/24",ARCC:21.19,OBDC:15.67,BXSL:30.52,TSLX:21.86,GBDC:15.79,TCPC:10.72},
-    {d:"7/19/24",ARCC:20.71,OBDC:15.29,BXSL:30.25,TSLX:21.26,GBDC:15.42,TCPC:10.41},
-    {d:"7/26/24",ARCC:20.95,OBDC:15.49,BXSL:30.75,TSLX:21.01,GBDC:15.40,TCPC:10.52},
-    {d:"8/2/24",ARCC:20.29,OBDC:14.98,BXSL:29.46,TSLX:20.41,GBDC:14.68,TCPC:10.06},
-    {d:"8/9/24",ARCC:20.50,OBDC:14.50,BXSL:29.90,TSLX:20.64,GBDC:14.35,TCPC:8.77},
-    {d:"8/16/24",ARCC:20.74,OBDC:14.51,BXSL:30.07,TSLX:20.79,GBDC:14.58,TCPC:8.80},
-    {d:"8/23/24",ARCC:20.92,OBDC:14.91,BXSL:29.53,TSLX:21.10,GBDC:14.94,TCPC:9.10},
-    {d:"8/30/24",ARCC:21.08,OBDC:15.16,BXSL:30.15,TSLX:21.24,GBDC:14.84,TCPC:8.93},
-    {d:"9/9/24",ARCC:20.57,OBDC:14.73,BXSL:30.02,TSLX:21.14,GBDC:14.70,TCPC:8.90},
-    {d:"9/16/24",ARCC:20.33,OBDC:14.70,BXSL:30.46,TSLX:20.87,GBDC:15.00,TCPC:8.44},
-    {d:"9/23/24",ARCC:20.69,OBDC:14.95,BXSL:30.44,TSLX:20.62,GBDC:14.93,TCPC:8.10},
-    {d:"9/30/24",ARCC:20.94,OBDC:14.57,BXSL:29.29,TSLX:20.53,GBDC:15.06,TCPC:8.07},
-    {d:"10/7/24",ARCC:21.02,OBDC:14.83,BXSL:29.69,TSLX:20.46,GBDC:15.13,TCPC:8.03},
-    {d:"10/14/24",ARCC:21.38,OBDC:14.98,BXSL:29.83,TSLX:20.64,GBDC:15.10,TCPC:8.08},
-    {d:"10/21/24",ARCC:21.72,OBDC:15.23,BXSL:31.31,TSLX:20.73,GBDC:15.44,TCPC:8.13},
-    {d:"10/28/24",ARCC:21.67,OBDC:15.31,BXSL:31.49,TSLX:20.57,GBDC:15.46,TCPC:8.09},
-    {d:"11/4/24",ARCC:20.88,OBDC:14.58,BXSL:30.39,TSLX:20.05,GBDC:14.88,TCPC:7.60},
-    {d:"11/11/24",ARCC:21.59,OBDC:14.86,BXSL:31.15,TSLX:20.38,GBDC:15.37,TCPC:8.50},
-    {d:"11/18/24",ARCC:21.68,OBDC:14.92,BXSL:31.07,TSLX:20.50,GBDC:15.47,TCPC:8.76},
-    {d:"11/25/24",ARCC:22.00,OBDC:15.19,BXSL:31.94,TSLX:20.94,GBDC:15.33,TCPC:8.81},
-    {d:"12/3/24",ARCC:22.18,OBDC:15.41,BXSL:32.04,TSLX:21.41,GBDC:15.60,TCPC:8.95},
-    {d:"12/10/24",ARCC:22.08,OBDC:15.41,BXSL:32.19,TSLX:21.46,GBDC:15.07,TCPC:9.24},
-    {d:"12/17/24",ARCC:21.30,OBDC:15.10,BXSL:31.80,TSLX:20.69,GBDC:14.95,TCPC:8.61},
-    {d:"12/24/24",ARCC:21.75,OBDC:15.48,BXSL:33.01,TSLX:21.14,GBDC:15.33,TCPC:8.53},
-    {d:"1/2/25",ARCC:22.21,OBDC:15.27,BXSL:32.50,TSLX:21.25,GBDC:15.27,TCPC:8.73},
-    {d:"1/10/25",ARCC:21.98,OBDC:14.55,BXSL:31.55,TSLX:20.96,GBDC:14.90,TCPC:8.39},
-    {d:"1/17/25",ARCC:23.18,OBDC:14.84,BXSL:32.59,TSLX:21.65,GBDC:15.40,TCPC:8.81},
-    {d:"1/27/25",ARCC:23.30,OBDC:14.84,BXSL:33.00,TSLX:22.04,GBDC:15.59,TCPC:9.08},
-    {d:"2/3/25",ARCC:23.80,OBDC:15.08,BXSL:33.72,TSLX:22.37,GBDC:15.73,TCPC:8.97},
-    {d:"2/10/25",ARCC:22.87,OBDC:15.07,BXSL:33.16,TSLX:22.08,GBDC:15.68,TCPC:8.87},
-    {d:"2/18/25",ARCC:23.35,OBDC:15.57,BXSL:34.39,TSLX:23.05,GBDC:15.96,TCPC:9.25},
-    {d:"2/25/25",ARCC:23.15,OBDC:15.35,BXSL:33.97,TSLX:23.18,GBDC:15.69,TCPC:9.27},
-    {d:"3/4/25",ARCC:22.78,OBDC:14.98,BXSL:32.88,TSLX:22.78,GBDC:15.07,TCPC:8.02},
-    {d:"3/11/25",ARCC:21.86,OBDC:14.50,BXSL:32.21,TSLX:22.08,GBDC:14.64,TCPC:7.91},
-    {d:"3/18/25",ARCC:21.82,OBDC:14.92,BXSL:32.91,TSLX:22.24,GBDC:15.01,TCPC:7.72},
-    {d:"3/25/25",ARCC:22.31,OBDC:15.17,BXSL:33.53,TSLX:22.62,GBDC:15.32,TCPC:7.83},
-    {d:"4/1/25",ARCC:22.29,OBDC:14.80,BXSL:32.74,TSLX:22.43,GBDC:15.21,TCPC:7.96},
-    {d:"4/8/25",ARCC:18.91,OBDC:12.48,BXSL:26.88,TSLX:19.16,GBDC:13.03,TCPC:6.40},
-    {d:"4/15/25",ARCC:20.17,OBDC:13.71,BXSL:28.46,TSLX:20.21,GBDC:13.98,TCPC:6.62},
-    {d:"4/23/25",ARCC:20.75,OBDC:14.00,BXSL:29.16,TSLX:20.70,GBDC:14.34,TCPC:6.88},
-    {d:"4/30/25",ARCC:20.66,OBDC:14.01,BXSL:29.30,TSLX:20.76,GBDC:14.32,TCPC:6.77},
-    {d:"5/7/25",ARCC:20.79,OBDC:13.71,BXSL:29.71,TSLX:20.86,GBDC:14.18,TCPC:6.54},
-    {d:"5/14/25",ARCC:21.63,OBDC:14.65,BXSL:31.22,TSLX:22.39,GBDC:14.88,TCPC:7.60},
-    {d:"5/21/25",ARCC:21.53,OBDC:14.30,BXSL:31.16,TSLX:22.56,GBDC:14.89,TCPC:7.53},
-    {d:"5/29/25",ARCC:21.99,OBDC:14.65,BXSL:31.97,TSLX:23.17,GBDC:15.28,TCPC:7.78},
-    {d:"6/5/25",ARCC:21.95,OBDC:14.53,BXSL:31.77,TSLX:23.29,GBDC:15.04,TCPC:7.73},
-    {d:"6/12/25",ARCC:22.28,OBDC:14.75,OTF:16.44,BXSL:31.84,TSLX:23.50,GBDC:15.21,TCPC:7.72},
-    {d:"6/20/25",ARCC:21.49,OBDC:14.47,OTF:15.64,BXSL:31.23,TSLX:23.16,GBDC:14.61,TCPC:7.53},
-    {d:"6/27/25",ARCC:21.95,OBDC:14.54,OTF:15.29,BXSL:31.34,TSLX:23.77,GBDC:14.44,TCPC:7.60},
-    {d:"7/7/25",ARCC:22.33,OBDC:14.42,OTF:15.33,BXSL:30.94,TSLX:23.94,GBDC:14.74,TCPC:7.69},
-    {d:"7/14/25",ARCC:22.86,OBDC:14.80,OTF:15.45,BXSL:31.89,TSLX:24.38,GBDC:15.28,TCPC:7.76},
-    {d:"7/21/25",ARCC:22.82,OBDC:14.82,OTF:15.27,BXSL:31.96,TSLX:24.26,GBDC:15.14,TCPC:7.57},
-    {d:"7/28/25",ARCC:22.70,OBDC:14.61,OTF:15.38,BXSL:31.97,TSLX:23.99,GBDC:15.10,TCPC:7.30},
-    {d:"8/4/25",ARCC:22.40,OBDC:14.09,OTF:14.87,BXSL:31.06,TSLX:23.79,GBDC:14.71,TCPC:6.99},
-    {d:"8/11/25",ARCC:22.45,OBDC:14.09,OTF:14.32,BXSL:30.34,TSLX:23.88,GBDC:14.79,TCPC:7.10},
-    {d:"8/18/25",ARCC:22.41,OBDC:14.16,OTF:14.77,BXSL:29.90,TSLX:24.03,GBDC:14.74,TCPC:7.02},
-    {d:"8/25/25",ARCC:22.08,OBDC:14.11,OTF:14.83,BXSL:29.59,TSLX:24.06,GBDC:14.65,TCPC:7.02},
-    {d:"9/2/25",ARCC:22.32,OBDC:14.23,OTF:14.60,BXSL:29.59,TSLX:24.51,GBDC:14.75,TCPC:7.09},
-    {d:"9/9/25",ARCC:22.24,OBDC:14.18,OTF:14.80,BXSL:28.99,TSLX:24.49,GBDC:14.67,TCPC:7.15},
-    {d:"9/16/25",ARCC:21.16,OBDC:13.70,OTF:15.29,BXSL:27.54,TSLX:23.24,GBDC:14.08,TCPC:6.72},
-    {d:"9/23/25",ARCC:20.76,OBDC:13.57,OTF:14.11,BXSL:27.28,TSLX:23.20,GBDC:14.01,TCPC:6.24},
-    {d:"9/30/25",ARCC:20.41,OBDC:12.77,OTF:13.77,BXSL:26.07,TSLX:22.86,GBDC:13.69,TCPC:6.20},
-    {d:"10/7/25",ARCC:19.86,OBDC:12.54,OTF:13.95,BXSL:25.75,TSLX:21.84,GBDC:13.55,TCPC:5.84},
-    {d:"10/14/25",ARCC:19.94,OBDC:12.87,OTF:14.36,BXSL:26.41,TSLX:21.89,GBDC:14.06,TCPC:5.79},
-    {d:"10/21/25",ARCC:19.91,OBDC:12.96,OTF:14.32,BXSL:26.44,TSLX:21.92,GBDC:14.07,TCPC:5.73},
-    {d:"10/28/25",ARCC:20.57,OBDC:13.24,OTF:14.66,BXSL:27.16,TSLX:22.86,GBDC:14.19,TCPC:5.88},
-    {d:"11/4/25",ARCC:20.27,OBDC:12.91,OTF:14.26,BXSL:26.22,TSLX:22.32,GBDC:14.07,TCPC:5.56},
-    {d:"11/11/25",ARCC:20.31,OBDC:12.07,OTF:13.45,BXSL:26.65,TSLX:21.32,GBDC:13.93,TCPC:5.72},
-    {d:"11/18/25",ARCC:19.52,OBDC:11.75,OTF:13.31,BXSL:26.29,TSLX:20.88,GBDC:13.55,TCPC:5.59},
-    {d:"11/25/25",ARCC:20.34,OBDC:12.88,OTF:13.65,BXSL:27.24,TSLX:21.56,GBDC:13.93,TCPC:5.84},
-    {d:"12/3/25",ARCC:20.82,OBDC:13.41,OTF:14.50,BXSL:28.09,TSLX:22.21,GBDC:14.14,TCPC:6.14},
-    {d:"12/10/25",ARCC:21.03,OBDC:13.38,OTF:14.47,BXSL:28.34,TSLX:22.77,GBDC:14.37,TCPC:6.19},
-    {d:"12/17/25",ARCC:20.19,OBDC:12.91,OTF:13.85,BXSL:27.74,TSLX:21.76,GBDC:13.54,TCPC:5.70},
-    {d:"12/24/25",ARCC:20.00,OBDC:12.59,OTF:14.11,BXSL:27.08,TSLX:21.48,GBDC:13.42,TCPC:5.35},
-    {d:"1/2/26",ARCC:20.44,OBDC:12.56,OTF:14.20,BXSL:26.58,TSLX:21.66,GBDC:13.57,TCPC:5.55},
-    {d:"1/9/26",ARCC:20.64,OBDC:12.56,OTF:14.02,BXSL:26.28,TSLX:21.86,GBDC:13.69,TCPC:5.58},
-    {d:"1/16/26",ARCC:20.90,OBDC:12.61,OTF:14.15,BXSL:26.51,TSLX:22.30,GBDC:13.82,TCPC:5.79},
-    {d:"1/26/26",ARCC:20.35,OBDC:12.30,OTF:13.55,BXSL:26.03,TSLX:22.02,GBDC:13.56,TCPC:5.10},
-    {d:"2/2/26",ARCC:19.52,OBDC:11.49,OTF:13.15,BXSL:25.10,TSLX:21.36,GBDC:13.05,TCPC:5.10},
-    {d:"2/9/26",ARCC:19.48,OBDC:11.74,OTF:13.03,BXSL:25.20,TSLX:19.95,GBDC:12.62,TCPC:4.79},
-    {d:"2/17/26",ARCC:19.30,OBDC:11.43,OTF:12.47,BXSL:24.23,TSLX:18.88,GBDC:12.25,TCPC:4.74},
-    {d:"2/24/26",ARCC:19.18,OBDC:11.68,OTF:11.53,BXSL:23.84,TSLX:18.10,GBDC:12.10,TCPC:4.53},
-    {d:"3/3/26",ARCC:18.95,OBDC:11.50,OTF:11.81,BXSL:24.33,TSLX:17.79,GBDC:12.21,TCPC:3.97},
-    {d:"3/10/26",ARCC:18.49,OBDC:11.36,OTF:11.46,BXSL:23.96,TSLX:18.43,GBDC:12.19,TCPC:3.76},
-    {d:"3/11/26",ARCC:18.49,OBDC:11.17,OTF:11.70,BXSL:23.99,TSLX:18.39,GBDC:12.08,TCPC:3.77}
+    {d:"3/11/24",ARCC:20.54,OBDC:15.18,BXSL:30.48,TSLX:21.31,GBDC:15.69,TCPC:10.42,BIZD:16.46},
+    {d:"3/18/24",ARCC:20.05,OBDC:15.25,BXSL:30.52,TSLX:20.68,GBDC:15.78,TCPC:9.81,BIZD:16.35},
+    {d:"3/25/24",ARCC:20.12,OBDC:15.41,BXSL:31.35,TSLX:20.88,GBDC:16.15,TCPC:9.86,BIZD:16.54},
+    {d:"4/2/24",ARCC:20.53,OBDC:15.37,BXSL:30.60,TSLX:21.01,GBDC:16.56,TCPC:9.83,BIZD:16.31},
+    {d:"4/9/24",ARCC:20.53,OBDC:15.57,BXSL:30.78,TSLX:20.96,GBDC:16.55,TCPC:9.89,BIZD:16.42},
+    {d:"4/16/24",ARCC:20.24,OBDC:15.39,BXSL:30.73,TSLX:20.55,GBDC:16.52,TCPC:9.81,BIZD:16.17},
+    {d:"4/23/24",ARCC:20.74,OBDC:15.74,BXSL:31.89,TSLX:21.18,GBDC:17.15,TCPC:9.76,BIZD:16.68},
+    {d:"4/30/24",ARCC:20.61,OBDC:15.90,BXSL:31.69,TSLX:21.69,GBDC:17.31,TCPC:9.81,BIZD:16.65},
+    {d:"5/7/24",ARCC:20.80,OBDC:16.32,BXSL:32.27,TSLX:21.03,GBDC:16.78,TCPC:10.17,BIZD:16.88},
+    {d:"5/14/24",ARCC:21.25,OBDC:16.51,BXSL:31.15,TSLX:21.67,GBDC:16.62,TCPC:10.44,BIZD:17.1},
+    {d:"5/21/24",ARCC:21.46,OBDC:16.60,BXSL:30.93,TSLX:21.55,GBDC:16.30,TCPC:10.56,BIZD:17.14},
+    {d:"5/29/24",ARCC:21.25,OBDC:16.64,BXSL:30.71,TSLX:21.62,GBDC:16.25,TCPC:10.61,BIZD:17.04},
+    {d:"6/5/24",ARCC:21.58,OBDC:16.34,BXSL:31.46,TSLX:21.91,GBDC:16.06,TCPC:11.10,BIZD:17.24},
+    {d:"6/12/24",ARCC:21.43,OBDC:15.98,BXSL:31.40,TSLX:21.68,GBDC:15.85,TCPC:11.07,BIZD:17.16},
+    {d:"6/20/24",ARCC:20.58,OBDC:15.92,BXSL:31.34,TSLX:21.24,GBDC:15.53,TCPC:10.46,BIZD:17.04},
+    {d:"6/27/24",ARCC:20.80,OBDC:15.58,BXSL:31.83,TSLX:21.35,GBDC:15.73,TCPC:10.55,BIZD:17.14},
+    {d:"7/5/24",ARCC:21.10,OBDC:15.60,BXSL:31.47,TSLX:21.72,GBDC:15.72,TCPC:10.68,BIZD:16.97},
+    {d:"7/12/24",ARCC:21.19,OBDC:15.67,BXSL:30.52,TSLX:21.86,GBDC:15.79,TCPC:10.72,BIZD:16.98},
+    {d:"7/19/24",ARCC:20.71,OBDC:15.29,BXSL:30.25,TSLX:21.26,GBDC:15.42,TCPC:10.41,BIZD:16.66},
+    {d:"7/26/24",ARCC:20.95,OBDC:15.49,BXSL:30.75,TSLX:21.01,GBDC:15.40,TCPC:10.52,BIZD:16.74},
+    {d:"8/2/24",ARCC:20.29,OBDC:14.98,BXSL:29.46,TSLX:20.41,GBDC:14.68,TCPC:10.06,BIZD:16.02},
+    {d:"8/9/24",ARCC:20.50,OBDC:14.50,BXSL:29.90,TSLX:20.64,GBDC:14.35,TCPC:8.77,BIZD:15.81},
+    {d:"8/16/24",ARCC:20.74,OBDC:14.51,BXSL:30.07,TSLX:20.79,GBDC:14.58,TCPC:8.80,BIZD:16.08},
+    {d:"8/23/24",ARCC:20.92,OBDC:14.91,BXSL:29.53,TSLX:21.10,GBDC:14.94,TCPC:9.10,BIZD:16.25},
+    {d:"8/30/24",ARCC:21.08,OBDC:15.16,BXSL:30.15,TSLX:21.24,GBDC:14.84,TCPC:8.93,BIZD:16.44},
+    {d:"9/9/24",ARCC:20.57,OBDC:14.73,BXSL:30.02,TSLX:21.14,GBDC:14.70,TCPC:8.90,BIZD:16.17},
+    {d:"9/16/24",ARCC:20.33,OBDC:14.70,BXSL:30.46,TSLX:20.87,GBDC:15.00,TCPC:8.44,BIZD:16.45},
+    {d:"9/23/24",ARCC:20.69,OBDC:14.95,BXSL:30.44,TSLX:20.62,GBDC:14.93,TCPC:8.10,BIZD:16.52},
+    {d:"9/30/24",ARCC:20.94,OBDC:14.57,BXSL:29.29,TSLX:20.53,GBDC:15.06,TCPC:8.07,BIZD:16.56},
+    {d:"10/7/24",ARCC:21.02,OBDC:14.83,BXSL:29.69,TSLX:20.46,GBDC:15.13,TCPC:8.03,BIZD:16.15},
+    {d:"10/14/24",ARCC:21.38,OBDC:14.98,BXSL:29.83,TSLX:20.64,GBDC:15.10,TCPC:8.08,BIZD:16.27},
+    {d:"10/21/24",ARCC:21.72,OBDC:15.23,BXSL:31.31,TSLX:20.73,GBDC:15.44,TCPC:8.13,BIZD:16.61},
+    {d:"10/28/24",ARCC:21.67,OBDC:15.31,BXSL:31.49,TSLX:20.57,GBDC:15.46,TCPC:8.09,BIZD:16.56},
+    {d:"11/4/24",ARCC:20.88,OBDC:14.58,BXSL:30.39,TSLX:20.05,GBDC:14.88,TCPC:7.60,BIZD:15.9},
+    {d:"11/11/24",ARCC:21.59,OBDC:14.86,BXSL:31.15,TSLX:20.38,GBDC:15.37,TCPC:8.50,BIZD:16.35},
+    {d:"11/18/24",ARCC:21.68,OBDC:14.92,BXSL:31.07,TSLX:20.50,GBDC:15.47,TCPC:8.76,BIZD:16.42},
+    {d:"11/25/24",ARCC:22.00,OBDC:15.19,BXSL:31.94,TSLX:20.94,GBDC:15.33,TCPC:8.81,BIZD:16.74},
+    {d:"12/3/24",ARCC:22.18,OBDC:15.41,BXSL:32.04,TSLX:21.41,GBDC:15.60,TCPC:8.95,BIZD:16.85},
+    {d:"12/10/24",ARCC:22.08,OBDC:15.41,BXSL:32.19,TSLX:21.46,GBDC:15.07,TCPC:9.24,BIZD:16.86},
+    {d:"12/17/24",ARCC:21.30,OBDC:15.10,BXSL:31.80,TSLX:20.69,GBDC:14.95,TCPC:8.61,BIZD:16.65},
+    {d:"12/24/24",ARCC:21.75,OBDC:15.48,BXSL:33.01,TSLX:21.14,GBDC:15.33,TCPC:8.53,BIZD:16.94},
+    {d:"1/2/25",ARCC:22.21,OBDC:15.27,BXSL:32.50,TSLX:21.25,GBDC:15.27,TCPC:8.73,BIZD:16.78},
+    {d:"1/10/25",ARCC:21.98,OBDC:14.55,BXSL:31.55,TSLX:20.96,GBDC:14.90,TCPC:8.39,BIZD:16.42},
+    {d:"1/17/25",ARCC:23.18,OBDC:14.84,BXSL:32.59,TSLX:21.65,GBDC:15.40,TCPC:8.81,BIZD:17.06},
+    {d:"1/27/25",ARCC:23.30,OBDC:14.84,BXSL:33.00,TSLX:22.04,GBDC:15.59,TCPC:9.08,BIZD:17.26},
+    {d:"2/3/25",ARCC:23.80,OBDC:15.08,BXSL:33.72,TSLX:22.37,GBDC:15.73,TCPC:8.97,BIZD:17.5},
+    {d:"2/10/25",ARCC:22.87,OBDC:15.07,BXSL:33.16,TSLX:22.08,GBDC:15.68,TCPC:8.87,BIZD:17.23},
+    {d:"2/18/25",ARCC:23.35,OBDC:15.57,BXSL:34.39,TSLX:23.05,GBDC:15.96,TCPC:9.25,BIZD:17.76},
+    {d:"2/25/25",ARCC:23.15,OBDC:15.35,BXSL:33.97,TSLX:23.18,GBDC:15.69,TCPC:9.27,BIZD:17.5},
+    {d:"3/4/25",ARCC:22.78,OBDC:14.98,BXSL:32.88,TSLX:22.78,GBDC:15.07,TCPC:8.02,BIZD:17.12},
+    {d:"3/11/25",ARCC:21.86,OBDC:14.50,BXSL:32.21,TSLX:22.08,GBDC:14.64,TCPC:7.91,BIZD:16.49},
+    {d:"3/18/25",ARCC:21.82,OBDC:14.92,BXSL:32.91,TSLX:22.24,GBDC:15.01,TCPC:7.72,BIZD:16.74},
+    {d:"3/25/25",ARCC:22.31,OBDC:15.17,BXSL:33.53,TSLX:22.62,GBDC:15.32,TCPC:7.83,BIZD:17.1},
+    {d:"4/1/25",ARCC:22.29,OBDC:14.80,BXSL:32.74,TSLX:22.43,GBDC:15.21,TCPC:7.96,BIZD:16.51},
+    {d:"4/8/25",ARCC:18.91,OBDC:12.48,BXSL:26.88,TSLX:19.16,GBDC:13.03,TCPC:6.40,BIZD:13.96},
+    {d:"4/15/25",ARCC:20.17,OBDC:13.71,BXSL:28.46,TSLX:20.21,GBDC:13.98,TCPC:6.62,BIZD:14.94},
+    {d:"4/23/25",ARCC:20.75,OBDC:14.00,BXSL:29.16,TSLX:20.70,GBDC:14.34,TCPC:6.88,BIZD:15.25},
+    {d:"4/30/25",ARCC:20.66,OBDC:14.01,BXSL:29.30,TSLX:20.76,GBDC:14.32,TCPC:6.77,BIZD:15.23},
+    {d:"5/7/25",ARCC:20.79,OBDC:13.71,BXSL:29.71,TSLX:20.86,GBDC:14.18,TCPC:6.54,BIZD:15.16},
+    {d:"5/14/25",ARCC:21.63,OBDC:14.65,BXSL:31.22,TSLX:22.39,GBDC:14.88,TCPC:7.60,BIZD:15.92},
+    {d:"5/21/25",ARCC:21.53,OBDC:14.30,BXSL:31.16,TSLX:22.56,GBDC:14.89,TCPC:7.53,BIZD:15.75},
+    {d:"5/29/25",ARCC:21.99,OBDC:14.65,BXSL:31.97,TSLX:23.17,GBDC:15.28,TCPC:7.78,BIZD:16.12},
+    {d:"6/5/25",ARCC:21.95,OBDC:14.53,BXSL:31.77,TSLX:23.29,GBDC:15.04,TCPC:7.73,BIZD:15.99},
+    {d:"6/12/25",ARCC:22.28,OBDC:14.75,OTF:16.44,BXSL:31.84,TSLX:23.50,GBDC:15.21,TCPC:7.72,BIZD:16.25},
+    {d:"6/20/25",ARCC:21.49,OBDC:14.47,OTF:15.64,BXSL:31.23,TSLX:23.16,GBDC:14.61,TCPC:7.53,BIZD:16.07},
+    {d:"6/27/25",ARCC:21.95,OBDC:14.54,OTF:15.29,BXSL:31.34,TSLX:23.77,GBDC:14.44,TCPC:7.60,BIZD:16.2},
+    {d:"7/7/25",ARCC:22.33,OBDC:14.42,OTF:15.33,BXSL:30.94,TSLX:23.94,GBDC:14.74,TCPC:7.69,BIZD:16.13},
+    {d:"7/14/25",ARCC:22.86,OBDC:14.80,OTF:15.45,BXSL:31.89,TSLX:24.38,GBDC:15.28,TCPC:7.76,BIZD:16.5},
+    {d:"7/21/25",ARCC:22.82,OBDC:14.82,OTF:15.27,BXSL:31.96,TSLX:24.26,GBDC:15.14,TCPC:7.57,BIZD:16.52},
+    {d:"7/28/25",ARCC:22.70,OBDC:14.61,OTF:15.38,BXSL:31.97,TSLX:23.99,GBDC:15.10,TCPC:7.30,BIZD:16.45},
+    {d:"8/4/25",ARCC:22.40,OBDC:14.09,OTF:14.87,BXSL:31.06,TSLX:23.79,GBDC:14.71,TCPC:6.99,BIZD:15.94},
+    {d:"8/11/25",ARCC:22.45,OBDC:14.09,OTF:14.32,BXSL:30.34,TSLX:23.88,GBDC:14.79,TCPC:7.10,BIZD:15.94},
+    {d:"8/18/25",ARCC:22.41,OBDC:14.16,OTF:14.77,BXSL:29.90,TSLX:24.03,GBDC:14.74,TCPC:7.02,BIZD:15.93},
+    {d:"8/25/25",ARCC:22.08,OBDC:14.11,OTF:14.83,BXSL:29.59,TSLX:24.06,GBDC:14.65,TCPC:7.02,BIZD:15.82},
+    {d:"9/2/25",ARCC:22.32,OBDC:14.23,OTF:14.60,BXSL:29.59,TSLX:24.51,GBDC:14.75,TCPC:7.09,BIZD:16.03},
+    {d:"9/9/25",ARCC:22.24,OBDC:14.18,OTF:14.80,BXSL:28.99,TSLX:24.49,GBDC:14.67,TCPC:7.15,BIZD:15.93},
+    {d:"9/16/25",ARCC:21.16,OBDC:13.70,OTF:15.29,BXSL:27.54,TSLX:23.24,GBDC:14.08,TCPC:6.72,BIZD:15.41},
+    {d:"9/23/25",ARCC:20.76,OBDC:13.57,OTF:14.11,BXSL:27.28,TSLX:23.20,GBDC:14.01,TCPC:6.24,BIZD:15.2},
+    {d:"9/30/25",ARCC:20.41,OBDC:12.77,OTF:13.77,BXSL:26.07,TSLX:22.86,GBDC:13.69,TCPC:6.20,BIZD:14.94},
+    {d:"10/7/25",ARCC:19.86,OBDC:12.54,OTF:13.95,BXSL:25.75,TSLX:21.84,GBDC:13.55,TCPC:5.84,BIZD:14.15},
+    {d:"10/14/25",ARCC:19.94,OBDC:12.87,OTF:14.36,BXSL:26.41,TSLX:21.89,GBDC:14.06,TCPC:5.79,BIZD:14.21},
+    {d:"10/21/25",ARCC:19.91,OBDC:12.96,OTF:14.32,BXSL:26.44,TSLX:21.92,GBDC:14.07,TCPC:5.73,BIZD:14.24},
+    {d:"10/28/25",ARCC:20.57,OBDC:13.24,OTF:14.66,BXSL:27.16,TSLX:22.86,GBDC:14.19,TCPC:5.88,BIZD:14.59},
+    {d:"11/4/25",ARCC:20.27,OBDC:12.91,OTF:14.26,BXSL:26.22,TSLX:22.32,GBDC:14.07,TCPC:5.56,BIZD:14.25},
+    {d:"11/11/25",ARCC:20.31,OBDC:12.07,OTF:13.45,BXSL:26.65,TSLX:21.32,GBDC:13.93,TCPC:5.72,BIZD:14.26},
+    {d:"11/18/25",ARCC:19.52,OBDC:11.75,OTF:13.31,BXSL:26.29,TSLX:20.88,GBDC:13.55,TCPC:5.59,BIZD:13.84},
+    {d:"11/25/25",ARCC:20.34,OBDC:12.88,OTF:13.65,BXSL:27.24,TSLX:21.56,GBDC:13.93,TCPC:5.84,BIZD:14.4},
+    {d:"12/3/25",ARCC:20.82,OBDC:13.41,OTF:14.50,BXSL:28.09,TSLX:22.21,GBDC:14.14,TCPC:6.14,BIZD:14.78},
+    {d:"12/10/25",ARCC:21.03,OBDC:13.38,OTF:14.47,BXSL:28.34,TSLX:22.77,GBDC:14.37,TCPC:6.19,BIZD:15.05},
+    {d:"12/17/25",ARCC:20.19,OBDC:12.91,OTF:13.85,BXSL:27.74,TSLX:21.76,GBDC:13.54,TCPC:5.70,BIZD:14.61},
+    {d:"12/24/25",ARCC:20.00,OBDC:12.59,OTF:14.11,BXSL:27.08,TSLX:21.48,GBDC:13.42,TCPC:5.35,BIZD:14.38},
+    {d:"1/2/26",ARCC:20.44,OBDC:12.56,OTF:14.20,BXSL:26.58,TSLX:21.66,GBDC:13.57,TCPC:5.55,BIZD:14.26},
+    {d:"1/9/26",ARCC:20.64,OBDC:12.56,OTF:14.02,BXSL:26.28,TSLX:21.86,GBDC:13.69,TCPC:5.58,BIZD:14.34},
+    {d:"1/16/26",ARCC:20.90,OBDC:12.61,OTF:14.15,BXSL:26.51,TSLX:22.30,GBDC:13.82,TCPC:5.79,BIZD:14.53},
+    {d:"1/26/26",ARCC:20.35,OBDC:12.30,OTF:13.55,BXSL:26.03,TSLX:22.02,GBDC:13.56,TCPC:5.10,BIZD:14.21},
+    {d:"2/2/26",ARCC:19.52,OBDC:11.49,OTF:13.15,BXSL:25.10,TSLX:21.36,GBDC:13.05,TCPC:5.10,BIZD:13.76},
+    {d:"2/9/26",ARCC:19.48,OBDC:11.74,OTF:13.03,BXSL:25.20,TSLX:19.95,GBDC:12.62,TCPC:4.79,BIZD:13.58},
+    {d:"2/17/26",ARCC:19.30,OBDC:11.43,OTF:12.47,BXSL:24.23,TSLX:18.88,GBDC:12.25,TCPC:4.74,BIZD:13.33},
+    {d:"2/24/26",ARCC:19.18,OBDC:11.68,OTF:11.53,BXSL:23.84,TSLX:18.10,GBDC:12.10,TCPC:4.53,BIZD:13.16},
+    {d:"3/3/26",ARCC:18.95,OBDC:11.50,OTF:11.81,BXSL:24.33,TSLX:17.79,GBDC:12.21,TCPC:3.97,BIZD:12.96},
+    {d:"3/10/26",ARCC:18.49,OBDC:11.36,OTF:11.46,BXSL:23.96,TSLX:18.43,GBDC:12.19,TCPC:3.76,BIZD:12.78},
+    {d:"3/11/26",ARCC:18.49,OBDC:11.17,OTF:11.70,BXSL:23.99,TSLX:18.39,GBDC:12.08,TCPC:3.77,BIZD:12.7},
   ];
 
   // TCPC now included in realPx from CSV
@@ -2497,6 +2497,7 @@ function MarketMod() {
           <ReferenceLine x="7/14/25" stroke={C.green} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "Peak SOFR / Soft Landing", position: "insideBottomRight", fontSize: 7, fill: C.green, fontFamily: mono, fontWeight: 700 }} />          {all.map(p => (
             <Line key={p.ticker} type="monotone" dataKey={p.ticker} stroke={p.color} strokeWidth={1.5} dot={false} name={p.ticker} connectNulls />
           ))}
+          <Line type="monotone" dataKey="BIZD" stroke="#E07020" strokeWidth={2.5} strokeDasharray="8 4" dot={false} name="BIZD" connectNulls />
         </ComposedChart>
       </ResponsiveContainer>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 6, marginBottom: 20 }}>
@@ -2513,6 +2514,19 @@ function MarketMod() {
             </span>
           );
         })}
+        {(() => {
+          const pts = pxData.filter(r => r.BIZD != null);
+          const first = pts[0] ? pts[0].BIZD : 0;
+          const last = pts[pts.length - 1] ? pts[pts.length - 1].BIZD : 0;
+          const ret = first > 0 ? ((last / first) - 1) * 100 : 0;
+          return (
+            <span style={{ fontFamily: mono, fontSize: 10 }}>
+              <span style={{ display: "inline-block", width: 14, height: 0, borderTop: "2.5px dashed #E07020", marginRight: 4, verticalAlign: "middle" }}></span>
+              <span style={{ color: "#E07020", fontWeight: 700 }}>BIZD</span>
+              <span style={{ color: ret >= 0 ? C.green : C.red, marginLeft: 4 }}>{ret >= 0 ? "+" : ""}{ret.toFixed(1)}%</span>
+            </span>
+          );
+        })()}
       </div>
 
       {/* Price / NAV Ratio Chart */}
@@ -2546,6 +2560,7 @@ function MarketMod() {
           );
         })}
       </div>
+
 
       {/* Unsecured Bond Bid YTW Chart */}
       <div style={{ fontFamily: mono, fontSize: 10, fontWeight: 700, color: C.navy, textTransform: "uppercase", letterSpacing: "0.06em", padding: "6px 8px", background: C.frost, borderLeft: `3px solid ${C.navy}`, marginBottom: 8 }}>
@@ -2721,7 +2736,7 @@ function MarketMod() {
               <ComposedChart data={bondYTW} margin={{ top: 10, right: 20, bottom: 10, left: 10 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={C.frost} />
                 <XAxis dataKey="d" tick={{ fontSize: 7, fontFamily: mono, fill: C.muted }} interval={Math.floor(bondYTW.length / 10)} />
-                <YAxis tick={{ fontSize: 9, fontFamily: mono, fill: C.muted }} domain={[0, "auto"]} tickFormatter={v => `${v.toFixed(1)}%`} />
+                <YAxis tick={{ fontSize: 9, fontFamily: mono, fill: C.muted }} domain={[4, "auto"]} tickFormatter={v => `${v.toFixed(1)}%`} />
                 <Tooltip contentStyle={{ fontFamily: mono, fontSize: 10 }} formatter={(v, name) => [`${Number(v).toFixed(2)}%`, name]} />
                 {(() => { const find = (m,y) => { const match = bondYTW.find(r => { const p = r.d.split("/"); return parseInt(p[0])===m && parseInt(p[2])===y; }); return match ? match.d : null; }; const tariff = find(4,25); const peak = find(7,25); const ai = find(1,26); return (<>{tariff && <ReferenceLine x={tariff} stroke={C.amber} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "Tariff Shock", position: "insideTopLeft", fontSize: 8, fill: C.amber, fontFamily: mono, fontWeight: 700 }} />}{peak && <ReferenceLine x={peak} stroke={C.green} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "Peak SOFR / Soft Landing", position: "insideBottomRight", fontSize: 7, fill: C.green, fontFamily: mono, fontWeight: 700 }} />}{ai && <ReferenceLine x={ai} stroke={C.red} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "AI Selloff", position: "insideTopLeft", fontSize: 8, fill: C.red, fontFamily: mono, fontWeight: 700 }} />}</>); })()}
                 {all.map(p => (
@@ -2920,7 +2935,7 @@ function MarketMod() {
               <ComposedChart data={bondBid} margin={{ top: 10, right: 20, bottom: 10, left: 10 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={C.frost} />
                 <XAxis dataKey="d" tick={{ fontSize: 7, fontFamily: mono, fill: C.muted }} interval={Math.floor(bondBid.length / 10)} />
-                <YAxis tick={{ fontSize: 9, fontFamily: mono, fill: C.muted }} domain={[80, "auto"]} tickFormatter={v => v.toFixed(0)} />
+                <YAxis tick={{ fontSize: 9, fontFamily: mono, fill: C.muted }} domain={[90, "auto"]} tickFormatter={v => v.toFixed(0)} />
                 <Tooltip contentStyle={{ fontFamily: mono, fontSize: 10 }} formatter={(v, name) => [Number(v).toFixed(2), name]} />
                 <ReferenceLine y={100} stroke={C.navy} strokeWidth={1} strokeDasharray="6 3" label={{ value: "Par", position: "insideTopLeft", fontSize: 8, fill: C.navy, fontFamily: mono }} />
                 {(() => { const find = (m,y) => { const match = bondBid.find(r => { const p = r.d.split("/"); return parseInt(p[0])===m && parseInt(p[2])===y; }); return match ? match.d : null; }; const tariff = find(4,25); const peak = find(7,25); const ai = find(1,26); return (<>{tariff && <ReferenceLine x={tariff} stroke={C.amber} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "Tariff Shock", position: "insideTopLeft", fontSize: 8, fill: C.amber, fontFamily: mono, fontWeight: 700 }} />}{peak && <ReferenceLine x={peak} stroke={C.green} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "Peak SOFR / Soft Landing", position: "insideBottomRight", fontSize: 7, fill: C.green, fontFamily: mono, fontWeight: 700 }} />}{ai && <ReferenceLine x={ai} stroke={C.red} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: "AI Selloff", position: "insideTopLeft", fontSize: 8, fill: C.red, fontFamily: mono, fontWeight: 700 }} />}</>); })()}
