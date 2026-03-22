@@ -4029,6 +4029,18 @@ function DataExportMod() {
         </table>
       </div>
 
+      {/* Analyst Data File */}
+      <div style={{ marginTop: 16, padding: "14px 16px", background: "#EFF6FF", border: `1px solid ${C.sky}`, borderRadius: 4 }}>
+        <div style={{ fontFamily: mono, fontSize: 11, fontWeight: 700, color: C.navy, marginBottom: 4 }}>Quarterly Panel Data (Excel)</div>
+        <div style={{ fontFamily: mono, fontSize: 9, color: C.muted, marginBottom: 8 }}>
+          5-year quarterly fundamentals for all coverage names. NII/share, NAV/share, dividend, price, coverage, and derived metrics. For analyst use.
+        </div>
+        <a href="./bdc_quarterly_panels_3_22_26.xlsx" download
+          style={{ fontFamily: mono, fontSize: 11, fontWeight: 700, padding: "8px 20px", background: C.navy, color: "white", borderRadius: 4, textDecoration: "none", display: "inline-block", letterSpacing: "0.04em" }}>
+          ↓ Download Excel (.xlsx)
+        </a>
+      </div>
+
       {/* Download All Button */}
       <div style={{ textAlign: "center", marginTop: 8 }}>
         <button onClick={() => downloads.forEach(d => setTimeout(d.fn, 0))}
