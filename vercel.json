@@ -1,0 +1,11 @@
+{
+  "headers": [
+    {
+      "source": "/(.*).xlsx",
+      "headers": [
+        { "key": "Content-Type", "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },
+        { "key": "Content-Disposition", "value": "attachment" }
+      ]
+    }
+  ]
+}
